@@ -17,7 +17,7 @@ export default function ExpenseTrack() {
   }, [expenses])
 
   const fetchData = async () => {
-    axios.get('http://localhost:3000/api/getdata')
+    axios.get('https://expense-back-end-bv7b.onrender.com/api/getdata')
       .then((response) => {
         setExpenses(response.data);
       })
@@ -28,11 +28,11 @@ export default function ExpenseTrack() {
 
   const addExpense = (title, amount, id) => {
     if (id) {
-      axios.put(`http://localhost:3000/api/${id}`, { title, amount: Number(amount) })
+      axios.put(`https://expense-back-end-bv7b.onrender.com/api/${id}`, { title, amount: Number(amount) })
         .catch((error) => console.error('Update Expense Error:', error.message));
         fetchData();
     } else {
-      axios.post('http://localhost:3000/api/postdata', { title, amount: Number(amount) })
+      axios.post('https://expense-back-end-bv7b.onrender.com/api/postdata', { title, amount: Number(amount) })
         .then((res) => {
           setExpenses([...expenses, res.data]);
         })
@@ -43,7 +43,7 @@ export default function ExpenseTrack() {
   };
 
   const deleteExpense = (id) => {
-    axios.delete(`http://localhost:3000/api/${id}`)
+    axios.delete(`https://expense-back-end-bv7b.onrender.com/api/${id}`)
       .then(() => {
         setExpenses(expenses.filter((exp) => exp._id !== id));
       })
