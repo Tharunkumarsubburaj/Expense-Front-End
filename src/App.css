@@ -1,1 +1,75 @@
 @import 'tailwindcss';
+
+/* Glossy Form Styles */
+.glossy-form {
+  background: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 2rem 2.5rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.glossy-form label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 1.1rem;
+}
+
+.glossy-input {
+  width: 90%;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-top: 0.5rem;
+  background: linear-gradient(90deg, #f3f4f6 0%, #e0e7ff 100%);
+  box-shadow: 0 2px 8px rgba(57, 63, 150, 0.15);
+  font-size: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.glossy-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6366f1;
+}
+
+.glossy-btn {
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.15);
+  cursor: pointer;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.glossy-btn:hover {
+  background: linear-gradient(90deg, #818cf8 0%, #38bdf8 100%);
+  box-shadow: 0 6px 24px rgba(31, 38, 135, 0.25);
+}
+
+.glossy-btn.cancel {
+  background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);
+  color: #fff;
+}
+
+.glossy-btn.cancel:hover {
+  background: linear-gradient(90deg, #fbbf24 0%, #f87171 100%);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .glossy-form {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+  .glossy-input {
+    width: 100%;
+  }
+}
